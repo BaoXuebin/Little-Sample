@@ -1,4 +1,6 @@
 import React from 'react';
 
-const Root = () => (<span>Hello World!</span>);
+import Home from '../demo/containers/Home';
+
+const Root = () => <Home />;
 export default Root;

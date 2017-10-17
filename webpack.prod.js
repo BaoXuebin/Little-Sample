@@ -30,7 +30,7 @@ module.exports = Merge(CommonConfig, {
         }),
         new HtmlWebpackPlugin({
             filename: '../index.html',
-            template: path.resolve(ROOT_PATH, 'index.tpl.prod.html')
+            template: path.resolve(ROOT_PATH, 'index.tpl.html')
         }),
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
