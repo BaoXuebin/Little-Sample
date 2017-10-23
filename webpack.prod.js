@@ -25,9 +25,9 @@ module.exports = {
         // 清空 dist 文件夹
         new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin('css/xdbin.style.css'),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common'
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'common'
+        // }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest' // 用于提取manifest
         }),

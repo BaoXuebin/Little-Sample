@@ -4,8 +4,11 @@ import { Item } from 'semantic-ui-react';
 
 import TodoListItem from './TodoListItem';
 
-const TodoList = ({ todos }) => {
-    const _html = todos.map(todo => <TodoListItem key={todo.id} todo={todo} />);
+const TodoList = ({ todos, onDelete, onToggleFinish }) => {
+    let _html = '暂无待办事项';
+    if (todos.length > 0) {
+        _html = todos.map(todo => <TodoListItem key={todo.id} todo={todo} onDelete={onDelete} onToggleFinish={onToggleFinish} />);
+    }
     return (
         <Item.Group>
             {_html}
@@ -14,7 +17,13 @@ const TodoList = ({ todos }) => {
 };
 
 TodoList.propTypes = {
-    todos: PropTypes.arrayOf(PropTypes.shape()).isRequired
+    todos: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    onDelete: PropTypes.func,
+    onToggleFinish: PropTypes.func
+};
+TodoList.defaultProps = {
+    onDelete: () => {},
+    onToggleFinish: () => {}
 };
 
 export default TodoList;
